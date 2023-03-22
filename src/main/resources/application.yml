@@ -1,0 +1,39 @@
+server:
+  port: 8001
+  servlet:
+    context-path: /assignment-item
+  error:
+    whitelabel:
+      enabled: false
+
+logging:
+  level:
+    org.springframework: DEBUG
+
+import:
+  file:
+    config:
+      separator: "|"
+      itemsFileName: import/artikli.txt
+      pricesFileName: import/cjenik.txt
+      storesFileName: import/pm.txt
+      stocksFileName: import/stanja.txt
+      encoding: windows-1250
+
+export:
+  file:
+    config:
+      firstFileName: src/main/resources/export/vrijednost zalihe - artikli.txt
+      secondFileName: src/main/resources/export/vrijednost zalihe - PM.txt
+      separator: "|"
+      endLine: \n
+
+springdoc:
+  swagger-ui:
+    path: /swagger/swagger.html
+
+hnb:
+  services:
+    config:
+      serverAddress: https://api.hnb.hr/tecajn-eur/v3?valuta=
+      currencyValue: DKK
